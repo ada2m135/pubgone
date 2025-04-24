@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCode - بوابتك لحلول برمجية متكاملة ومبتكرة</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        section {
+            padding: 70px 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card .service-content {
+            padding: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        .feature-box {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .step-card {
+            position: relative;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0056b3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .faq-card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0056b3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            margin-top: 10px;
+        }
+
+        .faq-card.active .faq-answer {
+            display: block;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #003d82;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid #0056b3;
+            color: #0056b3;
+            padding: 8px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background-color: #0056b3;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+
+        .footer {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        .footer h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #fff;
+            color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 86, 179, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .portfolio-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        .award-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .award-content {
+            padding: 20px;
+        }
+
+        .award-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        .contact-form .form-control {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.25);
+        }
+
+        .trusted-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .trusted-logo {
+            max-width: 120px;
+            height: 60px;
+            margin: 10px 20px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .trusted-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 500px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 w-full fixed top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-2xl font-bold text-blue-700">XCode</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-800 hover:text-blue-700 font-medium">الرئيسية</a>
+                <a href="#services" class="text-gray-800 hover:text-blue-700 font-medium">خدماتنا</a>
+                <a href="#why-us" class="text-gray-800 hover:text-blue-700 font-medium">لماذا نحن</a>
+                <a href="#process" class="text-gray-800 hover:text-blue-700 font-medium">طريقة العمل</a>
+                <a href="#portfolio" class="text-gray-800 hover:text-blue-700 font-medium">معرض الأعمال</a>
+                <a href="#testimonials" class="text-gray-800 hover:text-blue-700 font-medium">آراء العملاء</a>
+                <a href="#contact" class="text-gray-800 hover:text-blue-700 font-medium">تواصل معنا</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">XCode — بوابتك لحلول برمجية متكاملة ومبتكرة</h1>
+            <p class="text-xl md:text-2xl mb-10">حيث تجد الابتكار والتميز في عالم البرمجة والتطوير</p>
+            <a href="https://wa.me/201050606839" class="btn-primary ml-4">تواصل معنا</a>
+            <a href="#services" class="btn-outline">خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-xl font-semibold text-gray-700 mb-6">موثوق به من قبل أكثر من 500 شركة</h3>
+            <div class="trusted-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Intel_logo_%282006%29.svg" alt="Intel" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="trusted-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" class="trusted-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>تعرف على ما الخدمات التي نقدمها ونتميز بها</h2>
+                <p>نقدم خدمات برمجة وتصميم تلبي احتياجاتك بكفاءة وابتكار</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/612/703/non_2x/html-code-on-computer-monitor-software-web-developer-programming-code-photo.jpg" alt="برمجة المواقع">
+                    <div class="service-content">
+                        <h3>برمجة المواقع</h3>
+                        <p>نقوم ببرمجة وتطوير مواقع ويب متكاملة وسهلة الاستخدام تناسب جميع احتياجاتك</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://www.addevice.io/storage/ckeditor/uploads/images/65f840d316353_mobile.app.development.1920.1080.png" alt="برمجة التطبيقات">
+                    <div class="service-content">
+                        <h3>برمجة التطبيقات</h3>
+                        <p>نصمم ونطور تطبيقات متخصصة للهواتف الذكية تلبي متطلباتك الخاصة</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://d3lkc3n5th01x7.cloudfront.net/wp-content/uploads/2020/08/07000648/UI-UX-Design.png" alt="تصميم واجهة المستخدم UI&UX">
+                    <div class="service-content">
+                        <h3>تصميم واجهة المستخدم UI&UX</h3>
+                        <p>نوفر تصميمات واجهات مستخدم سهلة وجذابة لتعزيز تجربة المستخدم</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://www.oneidasolutions.com/wp-content/uploads/2014/12/community.jpg" alt="تصميم البراندنج">
+                    <div class="service-content">
+                        <h3>تصميم البراندنج</h3>
+                        <p>نبدع هوية بصرية فريدة ومميزة تعكس هوية علامتك التجارية</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://codism.io/wp-content/uploads/2019/02/dm.png" alt="التسويق الإلكتروني">
+                    <div class="service-content">
+                        <h3>التسويق الإلكتروني</h3>
+                        <p>نقدم استراتيجيات تسويق رقمي متكاملة لتعزيز وجودك على الإنترنت وزيادة مبيعاتك</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images01.nicepagecdn.com/page/56/70/website-design-preview-567002.jpg" alt="إدارة المشاريع">
+                    <div class="service-content">
+                        <h3>إدارة المشاريع</h3>
+                        <p>نوفر حلولاً متكاملة لإدارة مشاريعك بكفاءة ومتابعتها من خلال أدوات حديثة وخبرات متميزة</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://www.socialchamp.io/wp-content/uploads/2023/12/Content-Blog-Banner_Q4-2023_1125x600_35_Social-Media-Manager.png" alt="إدارة السوشيال ميديا">
+                    <div class="service-content">
+                        <h3>إدارة السوشيال ميديا</h3>
+                        <p>ندير حساباتك على وسائل التواصل الاجتماعي لزيادة التفاعل وبناء قاعدة جماهيرية</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://internetdevels.com/sites/default/files/public/qa-testing-life-cycle.png" alt="اختبار المواقع و التطبيقات">
+                    <div class="service-content">
+                        <h3>اختبار المواقع و التطبيقات</h3>
+                        <p>نختبر مواقعك وتطبيقاتك بدقة لضمان أدائها العالي وخلوها من الأخطاء</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="bg-white">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>لماذا تختار XCode معك</h2>
+                <p>نعمل باتقان لنقدم لك أفضل الخدمات البرمجية المتكاملة</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Aqualitativeleapforyourproject.80fdd6cb.svg" alt="نقلة نوعية لمشروعك" class="w-16 h-16">
+                    <h3>نقلة نوعية لمشروعك</h3>
+                    <p>حقق قفزة كبيرة في مشروعك من خلال حلولنا المتكاملة والمتقدمة في البرمجة والتصميم. نحن نساعدك في تحويل رؤيتك إلى واقع ملموس بخطوات مدروسة وفعالة.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Comprehensivesafetycheck.311a8acf.svg" alt="فحص شامل للأمان" class="w-16 h-16">
+                    <h3>فحص شامل للأمان</h3>
+                    <p>نضمن لك موقعًا أو تطبيقًا خاليًا من الثغرات من خلال إجراء اختبارات أمان دقيقة وشاملة. فريقنا المتخصص يكتشف ويعالج أي نقاط ضعف لضمان تجربة آمنة وسلسة للمستخدمين.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Uniqueanddistinctivedesign.2bd1d3a0.svg" alt="تصميم متميز وفريد" class="w-16 h-16">
+                    <h3>تصميم متميز وفريد</h3>
+                    <p>تميّز عن الآخرين بتصميمات إبداعية تعكس هوية مشروعك بشكل فريد. نحن نصمم واجهات جذابة وتجارب مستخدم مريحة تعزز من جاذبية موقعك أو تطبيقك وتترك انطباعًا لا يُنسى.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/IconContainer.e81bfbb8.svg" alt="تهيئه المشروع الخاص بك لنتائج البحث والتصدر فيها" class="w-16 h-16">
+                    <h3>تهيئه المشروع الخاص بك لنتائج البحث والتصدر فيها</h3>
+                    <p>نحن نركز على بناء هيكل برمجي متكامل ومحسّن خصيصًا لمحركات البحث لضمان تحسين ترتيب موقعك وزيادة ظهوره.</p>
+                    <ul class="mt-4">
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="شيفرة نظيفة وسريعة التحميل" class="w-5 h-5 ml-2">
+                            شيفرة نظيفة وسريعة التحميل.
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="تحسين عناصر الـ Meta Tags" class="w-5 h-5 ml-2">
+                            تحسين عناصر الـ Meta Tags.
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="تعزيز تجربة المستخدم المستهدفة" class="w-5 h-5 ml-2">
+                            تعزيز تجربة المستخدم المستهدفة.
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="نتائج ملحوظة وزيادة في الزيارات" class="w-5 h-5 ml-2">
+                            نتائج ملحوظة وزيادة في الزيارات.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Speedupyourwebsiteandapp.93da4a1a.svg" alt="سرعه الموقع والتطبيق الخاص بك" class="w-16 h-16">
+                    <h3>سرعه الموقع والتطبيق الخاص بك</h3>
+                    <p>نضمن لك أداءً سريعًا يحقق تجربة مستخدم مثالية ويزيد من رضا العملاء.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Websitehostingandservermanagement.1747cd5a.svg" alt="متابعه احدث التطورات في المشروع بسيستم مخصص" class="w-16 h-16">
+                    <h3>متابعه احدث التطورات في المشروع بسيستم مخصص</h3>
+                    <p>احصل على نظام متابعة مُصمم خصيصًا لتلبية احتياجاتك، يضمن لك الاطلاع على كل تطور في مشروعك بشكل فوري ومنظم.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Yourcodeisscalableandextensible..c01c20da.svg" alt="كودك قابل للتطور والتوسع" class="w-16 h-16">
+                    <h3>كودك قابل للتطور والتوسع</h3>
+                    <p>نحرص على كتابة كود مرن وسهل التعديل، مما يضمن لك إمكانية تطوير مشروعك وتوسيعه بسهولة في المستقبل.</p>
+                    <ul class="mt-4">
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="تصميم بنية كود مرنة" class="w-5 h-5 ml-2">
+                            تصميم بنية كود مرنة.
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="تحسين الأداء مع التوسع" class="w-5 h-5 ml-2">
+                            تحسين الأداء مع التوسع.
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="قابلية إضافة ميزات جديدة بسهولة" class="w-5 h-5 ml-2">
+                            قابلية إضافة ميزات جديدة بسهولة.
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <img src="https://rascoda.com/_next/static/media/CheckCircle.97ef64f8.svg" alt="توثيق شامل لتسهيل الصيانة" class="w-5 h-5 ml-2">
+                            توثيق شامل لتسهيل الصيانة.
+                        </li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <img src="https://rascoda.com/_next/static/media/Sitetestingvulnerabilities.c64c711c.svg" alt="اخبتار الموقع من الثغرات" class="w-16 h-16">
+                    <h3>اخبتار الموقع من الثغرات</h3>
+                    <p>نقوم بإجراء اختبارات شاملة لكشف الثغرات الأمنية في موقعك لضمان حماية بياناتك وتجربة مستخدم آمنة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>معرض أعمالنا</h2>
+                <p>تعرف علي ابرز اعمالنا في مختلف المجالات</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="portfolio-item">
+                    <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/19-best-web-design-portfolio-examples-to-inspire-yours-currentyear--3.jpeg" alt="مشروع 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">عرض التفاصيل</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>موقع شركة تقنية</h4>
+                        <p>تصميم وبرمجة موقع إلكتروني لشركة تقنية متخصصة في الذكاء الاصطناعي</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/6660f569933b3a8530b099ee_665e53dfe87858ffe6fcfcf5_2h3uVm8E8d2kEy5u4VDjpiCQcpExiLf8wN_vjoG6C1COhW4G3QT4pJoxAvgxDBLaR7l9TeHsbp9xICx3wJtKY-RqQ_ZTIpIPJWKhbeN24-jSRyfxlFh39HGzuf-rot_JIrzAQ9_Zhqd1RiAjSveljuA.png" alt="مشروع 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">عرض التفاصيل</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>تطبيق متجر إلكتروني</h4>
+                        <p>تطوير تطبيق للهواتف الذكية لمتجر إلكتروني متكامل</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://assets.justinmind.com/wp-content/uploads/2021/11/split-screen-web-design-portfolio-template.png" alt="مشروع 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">عرض التفاصيل</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>منصة تعليمية</h4>
+                        <p>تصميم وتطوير منصة تعليمية تفاعلية مع نظام إدارة محتوى متكامل</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://s14308.pcdn.co/wp-content/uploads/2021/09/Web-Design-Yorkshire-Niche-Examples.png" alt="مشروع 4" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">عرض التفاصيل</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>تطبيق إدارة مشاريع</h4>
+                        <p>تطوير تطبيق لإدارة المشاريع والمهام بكفاءة عالية</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://miro.medium.com/v2/resize:fit:679/1*gELPoM6ARZMhgfWcKiMJrg.png" alt="مشروع 5" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">عرض التفاصيل</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>هوية بصرية لشركة ناشئة</h4>
+                        <p>تصميم هوية بصرية متكاملة لشركة ناشئة في مجال التكنولوجيا المالية</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/0*yiSSYT812xOs77TZ.gif" alt="مشروع 6" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">عرض التفاصيل</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>منصة تواصل اجتماعي</h4>
+                        <p>تطوير منصة تواصل اجتماعي متخصصة لمجتمع الأعمال</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="bg-white">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>شهاداتنا وجوائزنا</h2>
+                <p>تعرف على إنجازاتنا وشهاداتنا التي حصلنا عليها</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="award-item">
+                    <img src="https://www.webaward.org/theblog/wp-content/uploads/Sample-WebAward-certificate-B.jpg" alt="جائزة 1" class="award-img">
+                    <div class="award-content">
+                        <h4>جائزة أفضل تصميم ويب</h4>
+                        <p>حصلنا على جائزة أفضل تصميم ويب لعام 2023 من مؤسسة WebAward العالمية</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <img src="https://www.cssdesignawards.com/imgs/content/about/cssda-award-certificate-2024-1.jpg" alt="جائزة 2" class="award-img">
+                    <div class="award-content">
+                        <h4>شهادة التميز في تطوير التطبيقات</h4>
+                        <p>حصلنا على شهادة التميز في تطوير تطبيقات الهواتف الذكية من CSS Design Awards</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <img src="https://cdn.csswinner.com/images/site-images/nominee-certificate.jpg" alt="جائزة 3" class="award-img">
+                    <div class="award-content">
+                        <h4>جائزة الابتكار التقني</h4>
+                        <p>فزنا بجائزة الابتكار التقني لعام 2023 من CSS Winner لمشروع منصة التعلم الإلكتروني</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process Section -->
+    <section id="process" class="bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>الجدول الزمني للمشروع</h2>
+                <p>عملية خطوة بخطوة لتسليم مشروعك.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <img src="https://rascoda.com/_next/static/media/1.36f77e46.svg" alt="الخطوة 1" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">تحديد احتياجات وتفاصيل المشروع</h3>
+                    <p>نحدد احتياجك من المشروع ونفهم متطلباتك وتفاصيل المشروع بشكل دقيق</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <img src="https://rascoda.com/_next/static/media/2.edf13170.svg" alt="الخطوة 2" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">بحث ودراسة المشروع</h3>
+                    <p>نقوم بإجراء بحث ودراسة معمقة لفهم نطاق المشروع والسوق المستهدف</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <img src="https://rascoda.com/_next/static/media/3.09f28d9f.svg" alt="الخطوة 3" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">تخطيط وتحديد المهام</h3>
+                    <p>نقوم بتحديد الأهداف ووضع خطة عمل مفصلة تشمل جميع المهام والجداول الزمنية</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <img src="https://rascoda.com/_next/static/media/4.edcc7356.svg" alt="الخطوة 4" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">تصميم واجهات المستخدم (UI/UX)</h3>
+                    <p>نصمم واجهات المستخدم وتجربة المستخدم بشكل مميز وجذاب لضمان أفضل تجربة للمستخدمين</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <img src="https://rascoda.com/_next/static/media/5.f74da177.svg" alt="الخطوة 5" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">البرمجة والتطوير</h3>
+                    <p>نقوم ببرمجة وتطوير المشروع أو التطبيق باستخدام أحدث التقنيات لضمان الجودة والكفاءة</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <img src="https://rascoda.com/_next/static/media/6.b3edd223.svg" alt="الخطوة 6" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">حل المشاكل والاختبار</h3>
+                    <p>نعمل على اختبار المشروع بدقة واكتشاف أي مشاكل أو ثغرات والعمل على حلها</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">7</div>
+                    <img src="https://rascoda.com/_next/static/media/7.04e854d4.svg" alt="الخطوة 7" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">اختبار الأمان والثغرات</h3>
+                    <p>نقوم باختبار شامل للتأكد من خلو التطبيق من أي ثغرات وضمان أمانه التام</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">8</div>
+                    <img src="https://rascoda.com/_next/static/media/8.987ae1e1.svg" alt="الخطوة 8" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">إطلاق المشروع وإدارته</h3>
+                    <p>نطلق المشروع على الإنترنت ونجري التسويق الرقمي وإدارة وسائل التواصل الاجتماعي لضمان وصوله للجمهور المستهدف بنجاح</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-white">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>أراء العملاء</h2>
+                <p>تعرف على تجارب عملائنا مع XCode</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="testimonial-card">
+                    <img src="https://creativityworkshop.com/wp-content/uploads/2015/03/testimonials.jpg" alt="عميل 1" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">أحمد محمد</h4>
+                    <p class="text-gray-600 text-sm mb-3">الرئيس التنفيذي لشركة تكنولوجيا</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>من أشطر الناس اللي اشتغلنا معاهم في تنفيذ المطلوب, وخصوصا اختيارهم للألوان والجرافيكس اللي في الموقع, والأهم التسليم في الموعد المطلوب.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://marypendergreene.com/wp-content/uploads/2022/02/Testimonials-Banner-@new.jpg" alt="عميل 2" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">خالد حسن</h4>
+                    <p class="text-gray-600 text-sm mb-3">مؤسس شركة تقنية</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>أفضل شركة تعاملت معها على الإطلاق! قامو بإعادة تصميم موقع شركتنا بطريقة احترافية للغاية، تعكس التعقيد والتميز في التصميمات.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://dionleadership.com/wp-content/uploads/2023/06/Clients-and-Testimonials-Smiling-Professionals-Creating-Healthy-Cultures.png" alt="عميل 3" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">أسامة محمد</h4>
+                    <p class="text-gray-600 text-sm mb-3">مؤسس موقع تعليمي</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>أنصح بشدة بالتعامل مع XCode، حيث تجد الابتكار والاحترافية في كل خطوة من خطوات تنفيذ المشاريع. إنهم يجعلون عملية التطوير والتصميم ممتعة وفعالة.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://d1penv8wo9w193.cloudfront.net/blog/wp-content/uploads/2024/05/image10.png" alt="عميل 4" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">محمد فتحي</h4>
+                    <p class="text-gray-600 text-sm mb-3">مدير أمن المعلومات</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>تجربتي مع XCode كانت رائعة بكل المقاييس، فريق العمل مميز واستجاب بسرعة لكل متطلباتي، وحققوا النتائج بدقة وجودة عالية.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://s29814.pcdn.co/wp-content/uploads/2022/02/shutterstock_1868190430-1.jpg.optimal.jpg" alt="عميل 5" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">نور الدين عادل</h4>
+                    <p class="text-gray-600 text-sm mb-3">مؤسس منصة سياحية</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>أنصح بشدة بالتعامل مع XCode، حيث تجد الابتكار والاحترافية في كل خطوة من خطوات تنفيذ المشاريع! إنهم يجعلون عملية التطوير والتصميم ممتعة وفعالة.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://www.aliveandactivelife.org/wp-content/uploads/2021/03/Testimonials-How-AAL-Working-Out-for-Folks.jpg" alt="عميل 6" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">ريم أحمد</h4>
+                    <p class="text-gray-600 text-sm mb-3">مديرة تسويق</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>تعاملت مع XCode في مشروع تطوير موقع الشركة، وكانت تجربة استثنائية. فريق العمل متعاون للغاية ويقدم حلولاً مبتكرة لكل التحديات.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://d2mkz4zdclmlek.cloudfront.net/blog/wp-content/uploads/2024/05/image10.png" alt="عميل 7" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">عمر خالد</h4>
+                    <p class="text-gray-600 text-sm mb-3">صاحب متجر إلكتروني</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>ساعدني فريق XCode في إنشاء متجر إلكتروني متكامل. النتائج فاقت توقعاتي، والمبيعات زادت بشكل ملحوظ بعد إطلاق الموقع الجديد.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://prod-dropshipping-s3.s3.fr-par.scw.cloud/2023/05/sephoraaa.png" alt="عميل 8" class="testimonial-img">
+                    <h4 class="text-lg font-bold mb-2 text-blue-700">سارة محمود</h4>
+                    <p class="text-gray-600 text-sm mb-3">مديرة مشاريع تقنية</p>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>تعاونت مع XCode في عدة مشاريع، وكانت النتائج مبهرة في كل مرة. الدقة في التنفيذ والالتزام بالمواعيد من أهم مميزاتهم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>الأسئلة الشائعة</h2>
+                <p>تعرف على المزيد عن XCode وخدماتنا</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="faq-card" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>ما هي مدة تنفيذ المشروع؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تختلف مدة تنفيذ المشاريع حسب حجم ونوع المشروع، لكننا نلتزم دائماً بالجداول الزمنية المتفق عليها مع العملاء. عادة ما تتراوح مدة تنفيذ المواقع البسيطة من 2-4 أسابيع، بينما قد تستغرق المشاريع الأكثر تعقيداً من 1-3 أشهر.</p>
+                    </div>
+                </div>
+                <div class="faq-card" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>هل تقدمون خدمات ما بعد التسليم؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم خدمات الدعم والصيانة لجميع مشاريعنا بعد التسليم. نوفر فترة ضمان لكل مشروع وخطط دعم مختلفة تناسب احتياجات العملاء المختلفة.</p>
+                    </div>
+                </div>
+                <div class="faq-card" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>كيف يمكنني متابعة تطورات مشروعي؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نوفر لعملائنا نظام متابعة خاص يتيح لهم الاطلاع على تقدم العمل في المشروع بشكل مستمر. كما نقدم تقارير دورية عن مراحل التنفيذ ونعقد اجتماعات منتظمة لمناقشة التطورات والملاحظات.</p>
+                    </div>
+                </div>
+                <div class="faq-card" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>هل تقدمون خدمات الاستضافة والدومين؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم خدمات استضافة المواقع وحجز النطاقات (الدومين) بأسعار تنافسية وجودة عالية. نوفر خيارات استضافة مختلفة تناسب احتياجات المشاريع المختلفة، مع ضمان سرعة وأمان عاليين.</p>
+                    </div>
+                </div>
+                <div class="faq-card" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>ما هي تكلفة تطوير موقع أو تطبيق؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تختلف التكلفة حسب نوع المشروع ومتطلباته وحجمه. نقوم بتقديم عروض أسعار مفصلة بعد دراسة احتياجات العميل ومتطلبات المشروع. نحرص دائماً على تقديم أسعار تنافسية مع الحفاظ على أعلى مستويات الجودة.</p>
+                    </div>
+                </div>
+                <div class="faq-card" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>هل يمكنني تعديل المشروع بعد إطلاقه؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، جميع مشاريعنا مصممة بطريقة مرنة تتيح إمكانية التعديل والتطوير المستقبلي. نوفر خدمات التعديل والتحديث المستمر للمواقع والتطبيقات بعد إطلاقها وفقاً لاحتياجات العملاء المتغيرة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white">
+        <div class="container mx-auto px-4">
+            <div class="section-title">
+                <h2>تواصل معنا</h2>
+                <p>نحن هنا للإجابة على جميع استفساراتك</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-700">معلومات التواصل</h3>
+                        <p class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-blue-700 ml-3 text-xl"></i>
+                            <span>شارع 26 يوليو، وسط البلد، القاهرة، مصر</span>
+                        </p>
+                        <p class="flex items-center mb-4">
+                            <i class="fas fa-phone-alt text-blue-700 ml-3 text-xl"></i>
+                            <span>201050606839+</span>
+                        </p>
+                        <p class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-blue-700 ml-3 text-xl"></i>
+                            <span>info@xcode.com</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-blue-700">تابعنا على</h3>
+                        <div class="flex">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/201050606839" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://wa.me/201050606839" class="btn-primary w-full text-center py-4 mb-6 flex items-center justify-center">
+                        <i class="fab fa-whatsapp ml-2 text-xl"></i>
+                        تواصل معنا عبر الواتساب
+                    </a>
+                    <p class="text-center mb-6">أو يمكنك زيارة مقر الشركة في العنوان الموضح</p>
+                    <div class="bg-gray-200 p-4 rounded-lg text-center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.666392228796!2d31.24171401511929!3d30.044420781883344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458409e4b8f2af1%3A0xde375ada828ad2db!2s26th%20of%20July%20Corridor%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1654871234567!5m2!1sen!2seg" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4>XCode</h4>
+                    <p class="mb-4">بوابتك لحلول برمجية متكاملة ومبتكرة حيث تجد الابتكار والتميز في عالم البرمجة والتطوير.</p>
+                    <div class="flex mt-4">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/201050606839" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#services" class="text-white hover:text-gray-300">برمجة المواقع</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white hover:text-gray-300">برمجة التطبيقات</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white hover:text-gray-300">تصميم واجهة المستخدم</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white hover:text-gray-300">التسويق الإلكتروني</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white hover:text-gray-300">إدارة السوشيال ميديا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-white hover:text-gray-300">الرئيسية</a></li>
+                        <li class="mb-2"><a href="#why-us" class="text-white hover:text-gray-300">لماذا نحن</a></li>
+                        <li class="mb-2"><a href="#process" class="text-white hover:text-gray-300">طريقة العمل</a></li>
+                        <li class="mb-2"><a href="#portfolio" class="text-white hover:text-gray-300">معرض الأعمال</a></li>
+                        <li class="mb-2"><a href="#testimonials" class="text-white hover:text-gray-300">آراء العملاء</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <p class="flex items-center mb-3">
+                        <i class="fas fa-map-marker-alt ml-3"></i>
+                        <span>شارع 26 يوليو، وسط البلد، القاهرة، مصر</span>
+                    </p>
+                    <p class="flex items-center mb-3">
+                        <i class="fas fa-phone-alt ml-3"></i>
+                        <span dir="ltr">+201050606839</span>
+                    </p>
+                    <p class="flex items-center mb-3">
+                        <i class="fas fa-envelope ml-3"></i>
+                        <span>info@xcode.com</span>
+                    </p>
+                    <a href="https://wa.me/201050606839" class="btn-outline mt-4">
+                        <i class="fab fa-whatsapp ml-2"></i>
+                        تواصل عبر واتساب
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+                <p>&copy; 2024 XCode. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Responsive Navigation
+        const navButton = document.querySelector('nav button');
+        const navMenu = document.querySelector('nav .hidden');
+
+        navButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('block');
+        });
+
+        // Scroll to Top Button Functionality
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTop = document.getElementById("scrollToTop");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTop.style.display = "block";
+            } else {
+                scrollToTop.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>
