@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recharge your PUBG UC easily at PUBGZone. Fast, secure, and reliable payment methods available.">
+    <title>PUBGZone</title>
+    <link rel="icon" type="image/png" href="https://example.com/images/favicon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            padding: 30px;
+            background-color: black;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .logo {
+            margin-bottom: 50px;
+        }
+        .logo img {
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .image-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            text-align: center;
+        }
+        .image-box img {
+            width: 350px;
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+        .cta {
+            margin: 20px 0;
+        }
+        .cta a {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .cta a:hover {
+            background-color: #e64a19;
+            transform: scale(1.1);
+        }
+
+        /* تحسين التنسيق للهواتف */
+        @media (max-width: 600px) {
+            .image-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+            }
+            .image-box img {
+                width: 80%;
+            }
+        }
+
+        /* إخفاء الحقول الخاصة بـ IP وفودافون كاش في البداية */
+        .ip-address-container, .vodafone-payment-container, .screenshot-container, .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ip-address-container input {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .ip-address-container button, .vodafone-payment-container button, .screenshot-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .vodafone-payment-container button {
+            background-color: #ff5722;
+        }
+
+        .ip-address-container button:hover, .vodafone-payment-container button:hover, .screenshot-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* زر لتحميل السكرين شوت */
+        .screenshot-container input[type="file"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 80%;
+            border-radius: 5px;
+        }
+
+        /* رسالة التأكيد بعد إرسال السكرين شوت */
+        .confirmation-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>مرحباً بك في PUBGZone!</h1>
+        <div class="logo">
+            <img src="https://i.ibb.co/Pvz7Kb6N/PUBGZon2.jpg" alt="PUBGZon2" border="0" loading="lazy">
+        </div>
+
+        <!-- الصور الست -->
+        <div class="image-row">
+            <div class="image-box">
+                <img src="https://i.ibb.co/gF3WdpSq/pubgzone5.jpg" alt="pubgzone5" border="0" loading="lazy">
+                <div class="cta">
+                    <a href="javascript:void(0)" onclick="showIPField('ip-address-1')">الشراء الآن</a>
+                </div>
+                <div id="ip-address-1" class="ip-address-container">
+                    <label for="ip-1">أدخل عنوان الـ IP الخاص بك:</label>
+                    <input type="text" id="ip-1" name="ip-1" placeholder="مثال: 192.168.0.1">
+                    <button onclick="showVodafonePayment('vodafone-1')">تأكيد الشراء</button>
+                </div>
+                <div id="vodafone-1" class="vodafone-payment-container">
+                    <p>لإتمام الدفع، أرسل المبلغ إلى رقم فودافون كاش: <strong>01064952960</strong></p>
+                    <button onclick="showScreenshotUpload('screenshot-1')">تم الدفع</button>
+                </div>
+                <div id="screenshot-1" class="screenshot-container">
+                    <p>الرجاء تحميل صورة السكرين شوت لتأكيد الدفع:</p>
+                    <input type="file" id="screenshot-1-upload" name="screenshot-1" accept="image/*">
+                    <button onclick="submitScreenshot('screenshot-1')">إرسال السكرين شوت</button>
+                </div>
+                <div id="confirmation-1" class="confirmation-message">
+                    سيتم الإرسال إلى حسابك بعد التأكيد.
+                </div>
+            </div>
+            <!-- الصورة الثانية -->
+            <div class="image-box">
+                <img src="https://i.ibb.co/FbVvjsCn/pubgzone6.jpg" alt="pubgzone6" border="0" loading="lazy">
+                <div class="cta">
+                    <a href="javascript:void(0)" onclick="showIPField('ip-address-2')">الشراء الآن</a>
+                </div>
+                <div id="ip-address-2" class="ip-address-container">
+                    <label for="ip-2">أدخل عنوان الـ IP الخاص بك:</label>
+                    <input type="text" id="ip-2" name="ip-2" placeholder="مثال: 192.168.0.1">
+                    <button onclick="showVodafonePayment('vodafone-2')">تأكيد الشراء</button>
+                </div>
+                <div id="vodafone-2" class="vodafone-payment-container">
+                    <p>لإتمام الدفع، أرسل المبلغ إلى رقم فودافون كاش: <strong>01064952960</strong></p>
+                    <button onclick="showScreenshotUpload('screenshot-2')">تم الدفع</button>
+                </div>
+                <div id="screenshot-2" class="screenshot-container">
+                    <p>الرجاء تحميل صورة السكرين شوت لتأكيد الدفع:</p>
+                    <input type="file" id="screenshot-2-upload" name="screenshot-2" accept="image/*">
+                    <button onclick="submitScreenshot('screenshot-2')">إرسال السكرين شوت</button>
+                </div>
+                <div id="confirmation-2" class="confirmation-message">
+                    سيتم الإرسال إلى حسابك بعد التأكيد.
+                </div>
+            </div>
+        </div>
+
+        <div class="image-row">
+            <div class="image-box">
+                <img src="https://i.ibb.co/sdW15zvD/Pubgzone4.jpg" alt="Pubgzone4" border="0" loading="lazy">
+                <div class="cta">
+                    <a href="javascript:void(0)" onclick="showIPField('ip-address-3')">الشراء الآن</a>
+                </div>
+                <div id="ip-address-3" class="ip-address-container">
+                    <label for="ip-3">أدخل عنوان الـ IP الخاص بك:</label>
+                    <input type="text" id="ip-3" name="ip-3" placeholder="مثال: 192.168.0.1">
+                    <button onclick="showVodafonePayment('vodafone-3')">تأكيد الشراء</button>
+                </div>
+                <div id="vodafone-3" class="vodafone-payment-container">
+                    <p>لإتمام الدفع، أرسل المبلغ إلى رقم فودافون كاش: <strong>01064952960</strong></p>
+                    <button onclick="showScreenshotUpload('screenshot-3')">تم الدفع</button>
+                </div>
+                <div id="screenshot-3" class="screenshot-container">
+                    <p>الرجاء تحميل صورة السكرين شوت لتأكيد الدفع:</p>
+                    <input type="file" id="screenshot-3-upload" name="screenshot-3" accept="image/*">
+                    <button onclick="submitScreenshot('screenshot-3')">إرسال السكرين شوت</button>
+                </div>
+                <div id="confirmation-3" class="confirmation-message">
+                    سيتم الإرسال إلى حسابك بعد التأكيد.
+                </div>
+            </div>
+            <!-- الصورة الرابعة -->
+            <div class="image-box">
+                <img src="https://i.ibb.co/bjGHNtTt/PUBGZone3.jpg" alt="PUBGZone3" border="0" loading="lazy">
+                <div class="cta">
+                    <a href="javascript:void(0)" onclick="showIPField('ip-address-4')">الشراء الآن</a>
+                </div>
+                <div id="ip-address-4" class="ip-address-container">
+                    <label for="ip-4">أدخل عنوان الـ IP الخاص بك:</label>
+                    <input type="text" id="ip-4" name="ip-4" placeholder="مثال: 192.168.0.1">
+                    <button onclick="showVodafonePayment('vodafone-4')">تأكيد الشراء</button>
+                </div>
+                <div id="vodafone-4" class="vodafone-payment-container">
+                    <p>لإتمام الدفع، أرسل المبلغ إلى رقم فودافون كاش: <strong>01064952960</strong></p>
+                    <button onclick="showScreenshotUpload('screenshot-4')">تم الدفع</button>
+                </div>
+                <div id="screenshot-4" class="screenshot-container">
+                    <p>الرجاء تحميل صورة السكرين شوت لتأكيد الدفع:</p>
+                    <input type="file" id="screenshot-4-upload" name="screenshot-4" accept="image/*">
+                    <button onclick="submitScreenshot('screenshot-4')">إرسال السكرين شوت</button>
+                </div>
+                <div id="confirmation-4" class="confirmation-message">
+                    سيتم الإرسال إلى حسابك بعد التأكيد.
+                </div>
+            </div>
+        </div>
+
+        <div class="image-row">
+            <div class="image-box">
+                <img src="https://i.ibb.co/FLYV1LPV/pubgzone7.jpg" alt="pubgzone7" border="0" loading="lazy">
+                <div class="cta">
+                    <a href="javascript:void(0)" onclick="showIPField('ip-address-5')">الشراء الآن</a>
+                </div>
+                <div id="ip-address-5" class="ip-address-container">
+                    <label for="ip-5">أدخل عنوان الـ IP الخاص بك:</label>
+                    <input type="text" id="ip-5" name="ip-5" placeholder="مثال: 192.168.0.1">
+                    <button onclick="showVodafonePayment('vodafone-5')">تأكيد الشراء</button>
+                </div>
+                <div id="vodafone-5" class="vodafone-payment-container">
+                    <p>لإتمام الدفع، أرسل المبلغ إلى رقم فودافون كاش: <strong>01064952960</strong></p>
+                    <button onclick="showScreenshotUpload('screenshot-5')">تم الدفع</button>
+                </div>
+                <div id="screenshot-5" class="screenshot-container">
+                    <p>الرجاء تحميل صورة السكرين شوت لتأكيد الدفع:</p>
+                    <input type="file" id="screenshot-5-upload" name="screenshot-5" accept="image/*">
+                    <button onclick="submitScreenshot('screenshot-5')">إرسال السكرين شوت</button>
+                </div>
+                <div id="confirmation-5" class="confirmation-message">
+                    سيتم الإرسال إلى حسابك بعد التأكيد.
+                </div>
+            </div>
+            <!-- الصورة السادسة -->
+            <div class="image-box">
+                <img src="https://i.ibb.co/yF89bm1c/pubgzone8.jpg" alt="pubgzone8" border="0" loading="lazy">
+                <div class="cta">
+                    <a href="javascript:void(0)" onclick="showIPField('ip-address-6')">الشراء الآن</a>
+                </div>
+                <div id="ip-address-6" class="ip-address-container">
+                    <label for="ip-6">أدخل عنوان الـ IP الخاص بك:</label>
+                    <input type="text" id="ip-6" name="ip-6" placeholder="مثال: 192.168.0.1">
+                    <button onclick="showVodafonePayment('vodafone-6')">تأكيد الشراء</button>
+                </div>
+                <div id="vodafone-6" class="vodafone-payment-container">
+                    <p>لإتمام الدفع، أرسل المبلغ إلى رقم فودافون كاش: <strong>01064952960</strong></p>
+                    <button onclick="showScreenshotUpload('screenshot-6')">تم الدفع</button>
+                </div>
+                <div id="screenshot-6" class="screenshot-container">
+                    <p>الرجاء تحميل صورة السكرين شوت لتأكيد الدفع:</p>
+                    <input type="file" id="screenshot-6-upload" name="screenshot-6" accept="image/*">
+                    <button onclick="submitScreenshot('screenshot-6')">إرسال السكرين شوت</button>
+                </div>
+                <div id="confirmation-6" class="confirmation-message">
+                    سيتم الإرسال إلى حسابك بعد التأكيد.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showIPField(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function showVodafonePayment(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function showScreenshotUpload(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function submitScreenshot(id) {
+            alert("تم إرسال السكرين شوت بنجاح.");
+            document.getElementById(id).style.display = 'none';
+            document.getElementById('confirmation-' + id.split('-')[1]).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
